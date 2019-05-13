@@ -47,7 +47,7 @@ vagrant up
 
 Be patient.
 
-To log in to the image once it's ready:
+To log in to the image once it's ready (NO PASSWORD REQUIRED):
 
 vagrant ssh
 
