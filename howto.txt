@@ -1,0 +1,59 @@
+Powershell script to quickly install Vagrant, Oracle Virtualbox and Cygwin on Windows 7 Service Pack 1 or Windows 10
+
+I have been asked a couple of times if there is a faster way to install Vagrant, Oracle Virtualbox and Cygwin in order to run Linux virtual 
+machines on Windows.
+
+I finally got around to writing a simple Powershell script that does the job.
+
+
+
+System requirements:
+
+Windows 7 with Service Pack 1 or Windows 10
+Internet-enabled PC to automatically download packages
+
+I tested this on a vanilla Windows 7 SP1 desktop and had to upgrade Powershell 2.0 in order to run Vagrant by downloading 
+and installing Windows6.1-KB2819745-x64-MultiPkg.msu from the web page 
+https://social.technet.microsoft.com/wiki/contents/articles/21016.how-to-install-windows-powershell-4-0.aspx
+
+After that I had to reboot Windows.
+
+
+
+How to use the script:
+
+Open a Powershell prompt in Windows AS AN ADMINISTRATOR.
+
+Type the full path to the script to run it, for example:
+C:\temp\vagrant.ps1
+
+(see screen capture images, 1.png, 2.png and 3.png)
+
+To use Vagrant afterwards, simply create a folder "ubuntu" under C:\Vagrantboxes, add a file named "Vagrantfile" (no extension) under there.
+
+A classic example of what to put in the Vagrantfile can be found at https://app.vagrantup.com/ubuntu/boxes/trusty64
+
+
+Running Vagrant:
+
+My experience was no Windows reboot was necessary after install.
+
+Open Cygwin Terminal (or Cygwin64 Terminal)
+
+Type the commands:
+
+cd /cygdrive/c/Vagrantboxes/ubuntu
+vagrant up
+
+Be patient.
+
+To log in to the image once it's ready:
+
+vagrant ssh
+
+To bring down the image:
+
+vagrant halt
+
+
+
