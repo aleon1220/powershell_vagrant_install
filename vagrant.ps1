@@ -28,6 +28,8 @@ chocolatey feature enable -n=allowGlobalConfirmation
 # Install Vagrant and virtualbox, cinst is a an alias for "choco install", --yes option might be overkill
 cinst --yes virtualbox vagrant cyg-get
 
+cyg-get dos2unix
+
 # Create folder where Vagrant box will be placed
 New-Item -ItemType directory -Path "C:\VagrantBoxes"
 
